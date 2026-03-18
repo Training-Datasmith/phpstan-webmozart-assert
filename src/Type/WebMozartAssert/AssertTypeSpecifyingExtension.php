@@ -136,7 +136,7 @@ class AssertTypeSpecifyingExtension implements StaticMethodTypeSpecifyingExtensi
 				$staticMethodReflection->getName(),
 				$node,
 				$scope,
-				static fn (Type $type) => TypeCombinator::addNull($type),
+				static fn (Type $type): \PHPStan\Type\Type => TypeCombinator::addNull($type),
 			);
 		}
 
@@ -832,7 +832,7 @@ class AssertTypeSpecifyingExtension implements StaticMethodTypeSpecifyingExtensi
 
 		return array_reduce(
 			$expressions,
-			static fn (Expr $carry, Expr $item) => new $binaryOp($carry, $item),
+			static fn (Expr $carry, Expr $item): object => new $binaryOp($carry, $item),
 			$firstExpression,
 		);
 	}
