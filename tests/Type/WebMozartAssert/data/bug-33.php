@@ -8,10 +8,9 @@ use Webmozart\Assert\Assert;
 
 class Bug33
 {
-
-	public function foo(?string $bar)
-	{
-		Assert::nullOrStringNotEmpty($bar);
-	}
+    public function foo(?string $bar)
+    {
+        Assert::nullOrStringNotEmpty($bar);
+    }
 
 }

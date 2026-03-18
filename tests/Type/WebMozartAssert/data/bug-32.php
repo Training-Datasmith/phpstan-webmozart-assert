@@ -11,7 +11,7 @@ use Webmozart\Assert\Assert;
  */
 function test(float $float, int $int, string $numericString): void
 {
-	Assert::integerish($float);
-	Assert::integerish($int);
-	Assert::integerish($numericString);
+    Assert::integerish($float);
+    Assert::integerish($int);
+    Assert::integerish($numericString);
 }

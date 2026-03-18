@@ -1,12 +1,15 @@
 <?php
 
-use Webmozart\Assert\Assert;
+declare(strict_types=1);
+
 use function PHPStan\Testing\assertType;
+
+use Webmozart\Assert\Assert;
 
 function assertInstanceOfWithString($value, string $className): void
 {
-	Assert::isInstanceOf($value, $className);
-	assertType('object', $value);
+    Assert::isInstanceOf($value, $className);
+    assertType('object', $value);
 }
 
 /**
@@ -14,8 +17,8 @@ function assertInstanceOfWithString($value, string $className): void
  */
 function assertInstanceOfWithClassString($value, string $className): void
 {
-	Assert::isInstanceOf($value, $className);
-	assertType('object', $value);
+    Assert::isInstanceOf($value, $className);
+    assertType('object', $value);
 }
 
 /**
@@ -23,8 +26,8 @@ function assertInstanceOfWithClassString($value, string $className): void
  */
 function assertInstanceOfWithGenericClassString($value, string $className): void
 {
-	Assert::isInstanceOf($value, $className);
-	assertType('Bug183', $value);
+    Assert::isInstanceOf($value, $className);
+    assertType('Bug183', $value);
 }
 
 /**
@@ -32,8 +35,8 @@ function assertInstanceOfWithGenericClassString($value, string $className): void
  */
 function assertInstanceOfWithGenericClassStringReferencingGenericClass($value, string $className): void
 {
-	Assert::isInstanceOf($value, $className);
-	assertType('Bug183Bar', $value);
+    Assert::isInstanceOf($value, $className);
+    assertType('Bug183Bar', $value);
 }
 
 /**
@@ -41,10 +44,9 @@ function assertInstanceOfWithGenericClassStringReferencingGenericClass($value, s
  */
 function assertInstanceOfWithGenericUnionClassString($value, string $className): void
 {
-	Assert::isInstanceOf($value, $className);
-	assertType('Bug183|Bug183Foo', $value);
+    Assert::isInstanceOf($value, $className);
+    assertType('Bug183|Bug183Foo', $value);
 }
-
 
 interface Bug183
 {

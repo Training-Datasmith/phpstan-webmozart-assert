@@ -1,4 +1,6 @@
-<?php declare(strict_types = 1);
+<?php
+
+declare(strict_types=1);
 
 namespace PHPStan\Type\WebMozartAssert;
 
@@ -9,15 +11,14 @@ use PHPStan\Testing\RuleTestCase;
 /** @extends RuleTestCase<ReturnTypeRule> */
 class MethodReturnTypeRuleTest extends RuleTestCase
 {
+    protected function getRule(): Rule
+    {
+        return self::getContainer()->getByType(ReturnTypeRule::class);
+    }
 
-	protected function getRule(): Rule
-	{
-		return self::getContainer()->getByType(ReturnTypeRule::class);
-	}
-
-	public function testBug117(): void
-	{
-		$this->analyse([__DIR__ . '/data/bug-117.php'], []);
-	}
+    public function testBug117(): void
+    {
+        $this->analyse([__DIR__ . '/data/bug-117.php'], []);
+    }
 
 }

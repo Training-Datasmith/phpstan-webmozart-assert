@@ -8,13 +8,12 @@ use Webmozart\Assert\Assert;
 
 class Bug8
 {
-
-	public function foo(string $a): void
-	{
-		Assert::numeric($a);
-		Assert::numeric($a);
-		Assert::numeric('foo');
-		Assert::numeric('17.19');
-	}
+    public function foo(string $a): void
+    {
+        Assert::numeric($a);
+        Assert::numeric($a);
+        Assert::numeric('foo');
+        Assert::numeric('17.19');
+    }
 
 }
